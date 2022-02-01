@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LaunchDarkly",
+        "repositoryURL": "https://github.com/launchdarkly/ios-client-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "a6d94a9da7b519feb8db872d1cdee4635c3894b6",
+          "version": "5.4.4"
+        }
+      },
+      {
+        "package": "LDSwiftEventSource",
+        "repositoryURL": "https://github.com/LaunchDarkly/swift-eventsource.git",
+        "state": {
+          "branch": null,
+          "revision": "30cfa4c50201fff3c3cd4459bf5f765e3b655815",
+          "version": "1.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
