@@ -25,6 +25,44 @@ public class LaunchDarklyManager {
         
         self.darklyClient = LDClient.get()
     }
+    
+    /**
+        Adds support to segmentation
+     
+        - Parameter user: Contains all *filters* for this session
+     */
+    public func segmentationBy(user: User) {
+        guard let darklyClient = self.darklyClient else
+        {
+            return
+        }
+        
+        var launchDarlyUser = makeLDUser(from: user)
+        
+        darklyClient.identify(user: launchDarlyUser)
+    }
+    
+    /**
+        Convert an `User` struct to an expected `LDUser` struct
+    */
+    private func makeLDUser(from user: User) -> LDUser {
+        var ldUser = LDUser()
+        
+        ldUser.name = user.name
+        ldUser.email = user.email
+        ldUser.country = user.country
+        
+        ldUser.device = user.device
+        ldUser.operatingSystem = user.operatingSystem
+        
+        if let age = user.age {
+            ldUser.custom = [
+                "age" : age
+            ]
+        }
+        
+        return ldUser
+    }
 }
 
 extension LaunchDarklyManager: Featurable {

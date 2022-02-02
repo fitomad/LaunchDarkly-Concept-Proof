@@ -11,6 +11,7 @@ public enum Flag: String
 {
     case blackFeature = "black-feature"
     case yellowFeature = "yellow-feature"
+    case pinkFeature = "pink-feature"
 }
 
 extension Flag: CustomStringConvertible {
